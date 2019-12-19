@@ -64,6 +64,7 @@ class Dog
     sql = <<-SQL
       SELECT * from dogs
       WHERE name = ? AND breed = ?
+      LIMIT 1
     SQL
     
     dog = DB[:conn].execute(SQL, name, breed)
