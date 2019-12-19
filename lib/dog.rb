@@ -64,9 +64,9 @@ class Dog
     name_query = <<-SQL 
     SELECT * FROM dogs 
     WHERE name = ?
-    LIMIT 1
+    li
     SQL
-    DB[:conn].execute(name_query,id).map do |row|
+    DB[:conn].execute(id_query,id).map do |row|
       self.new_from_db(row)
     end.first
   end
