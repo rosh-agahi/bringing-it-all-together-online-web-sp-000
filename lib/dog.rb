@@ -66,7 +66,7 @@ class Dog
     WHERE name = ?
     LIMIT 1
     SQL
-    DB[:conn].execute(id_query,id).map do |row|
+    DB[:conn].execute(name_query,id).map do |row|
       self.new_from_db(row)
     end.first
   end
